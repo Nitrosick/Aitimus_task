@@ -11,6 +11,7 @@ export const App = () => {
   const [data, setData] = useState([]);
   const [sorted, setSorted] = useState([]);
   const [modal, setModal] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [parameters, setParameters] = useState({ region: '', city: '', organization: '' });
 
   const getData = async (url = '') => {
@@ -54,7 +55,11 @@ export const App = () => {
   };
 
   useEffect(() => {
+    setLoading(true);
+
     getData(API.vacancies).then((result) => {
+      setLoading(false);
+
       if (result.length) {
         setData(result);
         console.clear();
@@ -72,6 +77,11 @@ export const App = () => {
       <Form data={data} setParameters={setParameters} />
       <Content data={sorted} setModal={setModal} />
       {modal && <Modal setModal={setModal} />}
+      {loading && (
+        <div className="loading">
+          <span className="loading_content">Загрузка...</span>
+        </div>
+      )}
     </main>
   );
 };
