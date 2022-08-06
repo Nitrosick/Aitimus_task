@@ -1,0 +1,43 @@
+.content {
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+.content .vacancies_count {
+  width: 100%;
+  height: 50px;
+  line-height: 20px;
+  padding: 15px;
+  background-color: white;
+  border-radius: 5px;
+}
+.content .vacancy_card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 15px;
+  background-color: white;
+  border-radius: 5px;
+  width: 200px;
+  max-width: 200px;
+}
+.content .vacancy_card_city {
+  color: #dcdcdc;
+  font-size: 12px;
+}
+.content .vacancy_card_title {
+  font-size: 20px;
+}
+.content .vacancy_card_info {
+  font-size: 16px;
+}
+.content .vacancy_card_more {
+  color: #f0863b;
+  font-weight: bold;
+}
+.content .vacancy_card_respond {
+  background-color: #f0863b;
+  color: white;
+  font-weight: bold;
+}

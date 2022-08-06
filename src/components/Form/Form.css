@@ -1,0 +1,26 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 15px;
+  background-color: white;
+  border-radius: 5px;
+}
+.form .custom_select,
+.form .custom_input {
+  border: 1px solid #dcdcdc;
+  border-radius: 5px;
+  padding: 0 7px 7px 7px;
+}
+.form .custom_select_title,
+.form .custom_input_title {
+  color: #dcdcdc;
+  padding: 0 5px;
+  font-size: 12px;
+}
+.form .custom_select_field,
+.form .custom_input_field {
+  padding: 7px;
+  width: 100%;
+  min-width: 200px;
+}
