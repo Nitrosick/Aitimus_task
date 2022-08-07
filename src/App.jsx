@@ -33,21 +33,12 @@ export const App = () => {
     const tempArray = [];
 
     data.forEach(el => {
-      if (parameters.organization !== '0') {
-        if (
-          el.regionname === parameters.region &&
-          el.placetitle === parameters.city &&
-          el.clientname === parameters.organization
-        ) {
-          tempArray.push(el);
-        }
-      } else {
-        if (
-          el.regionname === parameters.region &&
-          el.placetitle === parameters.city
-        ) {
-          tempArray.push(el);
-        }
+      if (
+        el.regionname === parameters.region &&
+        el.placetitle === parameters.city &&
+        (el.clientname === parameters.organization || !parameters.organization)
+      ) {
+        tempArray.push(el);
       }
     });
 

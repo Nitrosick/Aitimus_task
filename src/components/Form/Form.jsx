@@ -23,8 +23,8 @@ export const Form = ({ data, setParameters }) => {
     const getCities = async (region) => {
         setCitiesList([]);
         setOrganizationsList([]);
-        citySelect.current.value = 0;
-        organizationSelect.current.value = 0;
+        citySelect.current.value = "";
+        organizationSelect.current.value = "";
 
         const cities = new Set();
 
@@ -40,7 +40,7 @@ export const Form = ({ data, setParameters }) => {
 
     const getOrganizations = async (city) => {
         setOrganizationsList([]);
-        organizationSelect.current.value = 0;
+        organizationSelect.current.value = "";
 
         const organizations = new Set();
 
@@ -101,7 +101,7 @@ export const Form = ({ data, setParameters }) => {
                     ref={citySelect}
                     onChange={(e) => getOrganizations(e.target.value)}
                 >
-                    <option value="0">Выберите город</option>
+                    <option value="">Выберите город</option>
 
                     {citiesList.map((city, idx) => (
                         <option key={idx} value={city}>{city}</option>
@@ -118,7 +118,7 @@ export const Form = ({ data, setParameters }) => {
                     ref={organizationSelect}
                     onChange={(e) => pushParameters()}
                 >
-                    <option value="0">Выберите организацию</option>
+                    <option value="">Выберите организацию</option>
 
                     {organizationsList.map((organization, idx) => (
                         <option key={idx} value={organization}>{organization}</option>
